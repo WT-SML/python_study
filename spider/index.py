@@ -1,3 +1,4 @@
+# # 爬取中美医学的课程名称
 # import requests
 # res=requests.get('https://vedio.jiudingfanyi.com/w/course',{'page':1})
 # cate=res.json()['data']
