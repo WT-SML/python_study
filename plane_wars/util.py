@@ -1,5 +1,6 @@
 import random
 import pygame
+import os
 
 
 SCREEN_RECT = pygame.Rect(0, 0, 480, 700)
@@ -30,7 +31,8 @@ class Sprite(pygame.sprite.Sprite):
 
 class BG(Sprite):
     def __init__(self, isTop=False):
-        super().__init__('./src/images/background.png')
+        # super().__init__('./src/images/background.png')
+        super().__init__(os.path.join(os.path.dirname(__file__),'src/images/background.png'))
         if isTop:
             self.rect.y = -self.rect.height
 
@@ -43,7 +45,8 @@ class BG(Sprite):
 class Enemy(Sprite):
     # 敌机精灵
     def __init__(self):
-        super().__init__('./src/images/enemy1.png')
+        # super().__init__('./src/images/enemy1.png')
+        super().__init__(os.path.join(os.path.dirname(__file__),'src/images/enemy1.png'))
         self.speed = random.randint(1, 3)
         self.rect.bottom = 0
         max_x = SCREEN_RECT.width-self.rect.width
@@ -57,7 +60,8 @@ class Enemy(Sprite):
 
 class Hero(Sprite):
     def __init__(self):
-        super().__init__('./src/images/me1.png', 0)
+        # super().__init__('./src/images/me1.png', 0)
+        super().__init__(os.path.join(os.path.dirname(__file__),'src/images/me1.png'))
         self.rect.centerx = SCREEN_RECT.centerx
         self.rect.bottom = SCREEN_RECT.bottom-100
         self.bullet_group = pygame.sprite.Group()
@@ -79,7 +83,9 @@ class Hero(Sprite):
 
 class Bullet(Sprite):
     def __init__(self):
-        super().__init__('./src/images/bullet1.png', -10)
+        # super().__init__('./src/images/bullet1.png', -10)
+        super().__init__(os.path.join(os.path.dirname(__file__),'src/images/bullet1.png'),-10)
+
 
     def update(self):
         super().update()
