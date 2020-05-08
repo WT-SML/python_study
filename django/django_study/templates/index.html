@@ -1,15 +1,64 @@
 <!DOCTYPE html>
 <html lang="zh-cmn-Hans">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+
 </head>
 
 <body>
-    <div id ="app">
-        <iframe src="//player.bilibili.com/player.html?aid=96570506&bvid=BV1b7411f7b7&cid=164867239&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+    <div id="app">
+        <style>
+            .iframe_video {
+                position: relative;
+                width: 100%;
+            }
+
+            @media only screen and (max-width: 767px) {
+                .iframe_video {
+                    height: 15em;
+                }
+            }
+
+            @media only screen and (min-width: 768px) and (max-width: 991px) {
+                .iframe_video {
+                    height: 20em;
+                }
+            }
+
+            @media only screen and (min-width: 992px) and (max-width: 1199px) {
+                .iframe_video {
+                    height: 30em;
+                }
+            }
+
+            @media only screen and (min-width: 1200px) {
+                .iframe_video {
+                    height: 40em;
+                }
+            }
+
+            .iframe_cross {
+                position: relative;
+                width: 100%;
+                height: 0;
+                padding-bottom: 75%
+            }
+
+            .iframe_cross iframe {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0
+            }
+        </style>
+        <iframe class="iframe_video"
+            src="//player.bilibili.com/player.html?aid=96570506&bvid=BV1b7411f7b7&cid=164867239&page=1" scrolling="no"
+            border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
     </div>
     <script>
     </script>

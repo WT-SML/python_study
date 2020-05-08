@@ -16,14 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from django.shortcuts import HttpResponse,render,redirect
+from app01 import views
 
-def handleIndex(req):
-    # return HttpResponse('index')
-    return render(req,'index.html')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('/', lambda req: redirect('index')),
-    path('index', handleIndex),
+    path('index', views.handleIndex),
 ]
