@@ -167,3 +167,6 @@
 #     return z
 # print(fb(40))
 
+# txt = '123\n\t456a'
+# print(txt.replace('\n', '').replace('\r', ''))
+

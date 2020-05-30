@@ -29,7 +29,7 @@ def gettrans(_input):
         return _input
     url = 'http://fanyi.youdao.com/translate?smartresult=dict&smartresult=rule'
     data = {
-        'i': _input,
+        'i': _input.replace('\n', '').replace('\r', ''),
         'salt': str(int(time.time()*1000) + random.randint(1, 10)),
         'sign': hashlib.md5(('fanyideskweb' + _input + str(int(time.time()*1000) + random.randint(1, 10)) + 'rY0D^0\'nM0}g5Mm1z%1G4').encode('utf-8')).hexdigest(),
         'doctype': 'json',
