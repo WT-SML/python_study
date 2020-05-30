@@ -1,5 +1,6 @@
 import MySQLdb
 
+
 db = MySQLdb.connect(
     host='localhost',
     port=3306,
@@ -20,5 +21,6 @@ try:
     print(ret)
 except:
     print("Error: unable to fecth data")
+
 
 db.close()
